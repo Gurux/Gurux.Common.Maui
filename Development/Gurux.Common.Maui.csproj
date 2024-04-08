@@ -76,12 +76,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.14" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.14" />
 	</ItemGroup>
-
 	<ItemGroup>
-	  <None Update="Gurux.Common.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	</ItemGroup>
-
+                <None Include="Gurux.Common.png" Pack="true" PackagePath="\" />
+        </ItemGroup>
 </Project>
