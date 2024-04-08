@@ -29,16 +29,11 @@
 // This code is licensed under the GNU General Public License v2. 
 // Full text may be retrieved at http://www.gnu.org/licenses/gpl-2.0.txt
 //---------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace Gurux.Common
 {
-	/// <summary>
-	/// Argument class for IGXMedia data received events.
-	/// </summary>
+    /// <summary>
+    /// Argument class for IGXMedia data received events.
+    /// </summary>
     public class ReceiveEventArgs
     {
         /// <summary>
@@ -62,7 +57,7 @@ namespace Gurux.Common
         /// Pointer to the byte buffer containing the data, 
         /// which is received from the device.
         /// </summary>
-        public object Data
+        public object? Data
         {
             get;
             set;
@@ -70,7 +65,7 @@ namespace Gurux.Common
         /// <summary>
         /// Media depend sender information.
         /// </summary>
-        public string SenderInfo
+        public string? SenderInfo
         {
             get;
             set;

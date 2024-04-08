@@ -29,13 +29,8 @@
 // This code is licensed under the GNU General Public License v2. 
 // Full text may be retrieved at http://www.gnu.org/licenses/gpl-2.0.txt
 //---------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace Gurux.Common
-{       
+{
     /// <summary>
     /// ReceiveArgs class is used when data ir read synchronously.
     /// </summary>
@@ -65,7 +60,7 @@ namespace Gurux.Common
         /// The EOP can, for example be a single byte ('0xA1'), 
         /// a string ("OK") or an array of bytes.        
         /// </remarks>
-        public object Eop
+        public object? Eop
         {
             get;
             set;
@@ -105,7 +100,7 @@ namespace Gurux.Common
         /// <summary>
         /// Received reply data.
         /// </summary>
-        public T Reply
+        public T? Reply
         {
             get;
             set;

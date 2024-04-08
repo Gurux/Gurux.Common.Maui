@@ -40,7 +40,7 @@ namespace Gurux.Common
     /// Common Gurux helpers.
     /// </summary>
     public static class GXCommon
-    {       
+    {
         /// <summary>
         /// Convert byte array to hex string.
         /// </summary>
@@ -99,7 +99,7 @@ namespace Gurux.Common
                 --len;
             }
             return new string(str, 0, len);
-        }      
+        }
 
         /// <summary>
         /// Convert char hex value to byte value.
@@ -202,7 +202,7 @@ namespace Gurux.Common
         {
             if (value == null)
             {
-                return new byte[0];
+                return [];
             }
             if (value is byte[] v)
             {
@@ -215,9 +215,8 @@ namespace Gurux.Common
             int rawsize;
             byte[] rawdata;
             GCHandle handle;
-            if (value is Array)
+            if (value is Array arr)
             {
-                Array arr = value as Array;
                 if (arr.Length != 0)
                 {
                     int valueSize = Marshal.SizeOf(arr.GetType().GetElementType());
@@ -233,7 +232,7 @@ namespace Gurux.Common
                     handle.Free();
                     return rawdata;
                 }
-                return new byte[0];
+                return [];
             }
 
             rawsize = Marshal.SizeOf(value);
@@ -254,7 +253,7 @@ namespace Gurux.Common
         /// <param name="reverse">Is value reversed.</param>
         /// <param name="readBytes">Count of read bytes.</param>
         /// <returns>Return object of given type.</returns>
-        public static object ByteArrayToObject(byte[] byteArray, Type type, int index, int count, bool reverse, out int readBytes)
+        public static object? ByteArrayToObject(byte[] byteArray, Type type, int index, int count, bool reverse, out int readBytes)
         {
             if (byteArray == null)
             {
@@ -305,7 +304,7 @@ namespace Gurux.Common
                 byteArray = new byte[readBytes];
                 Array.Copy(tmp, index, byteArray, 0, readBytes);
             }
-            object value = null;
+            object? value = null;
             if (type == typeof(string))
             {
                 return Encoding.UTF8.GetString(byteArray);
@@ -347,7 +346,7 @@ namespace Gurux.Common
         /// <param name="type">Object type.</param>
         /// <param name="readBytes">Read byte count.</param>
         /// <returns></returns>
-        public static object ByteArrayToObject(byte[] byteArray, Type type, out int readBytes)
+        public static object? ByteArrayToObject(byte[] byteArray, Type type, out int readBytes)
         {
             return ByteArrayToObject(byteArray, type, 0, byteArray.Length, false, out readBytes);
         }
@@ -424,6 +423,6 @@ namespace Gurux.Common
                 return BitConverter.Equals(a, b);
             }
             return true;
-        }               
+        }
     }
 }
