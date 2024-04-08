@@ -17,6 +17,19 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Version>0.0.1-local</Version>
+		<Authors>Gurux Ltd</Authors>
+		<Company>Gurux Ltd</Company>
+		<Copyright>Copyright (c) 1998-2024 Gurux Ltd. All rights reserved.</Copyright>
+		<Description>Gurux.Common class implements interfaces that are needed for Gurux Media components and Gurux Device Framework.</Description>
+		<PackageProjectUrl>www.gurux.fi</PackageProjectUrl>
+		<PackageIcon>Gurux.Common.png</PackageIcon>
+		<RepositoryUrl>https://github.com/gurux/gurux.common.Maui</RepositoryUrl>
+		<PackageTags>AMR, AMI IOT</PackageTags>
+		<PackageLicenseExpression>GPL-2.0-only</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
@@ -60,8 +73,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.14" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.14" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Gurux.Common.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>
