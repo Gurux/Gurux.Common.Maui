@@ -160,12 +160,12 @@ namespace Gurux.Common
         /// </summary>
         /// <param name="parent">Parent window.</param>
         /// <returns>Returns True if user has accect changes. Otherwice false.</returns>
-        bool Properties(View parent);
+        bool Properties(INavigation parent);
 
         /// <summary>
         /// Returns Media debended Properties form.
         /// </summary>
-        View PropertiesForm
+        ContentPage PropertiesForm
         {
             get;
         }
@@ -201,7 +201,7 @@ namespace Gurux.Common
         /// <summary>
         /// Media settings as a XML string.
         /// </summary>
-        string Settings
+        string? Settings
         {
             get;
             set;
@@ -274,7 +274,7 @@ namespace Gurux.Common
         /// <summary>
         /// Data is buffered until EOP is received.
         /// </summary>
-        object Eop
+        object? Eop
         {
             get;
             set;
@@ -292,11 +292,11 @@ namespace Gurux.Common
         /// <summary>
         /// Gets or sets an object that contains data to associate with the item.
         /// </summary>
-        object Tag
+        object? Tag
         {
             get;
             set;
-        }       
+        }
 
         /// <summary>
         /// Gets an object that can be used to synchronize the media.
@@ -327,7 +327,7 @@ namespace Gurux.Common
         /// <summary>
         /// Wait handle for asynchronous messages. It's null if asynchronous messages is not used.
         /// </summary>
-        EventWaitHandle AsyncWaitHandle
+        EventWaitHandle? AsyncWaitHandle
         {
             get;
         }
