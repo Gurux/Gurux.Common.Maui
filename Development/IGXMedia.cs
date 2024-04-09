@@ -158,9 +158,9 @@ namespace Gurux.Common
         /// <summary>
         /// Shows the media Properties dialog.
         /// </summary>
-        /// <param name="parent">Parent window.</param>
+        /// <param name="navigation">Navigation window.</param>
         /// <returns>Returns True if user has accect changes. Otherwice false.</returns>
-        bool Properties(INavigation parent);
+        public Task<bool> PropertiesAsync(INavigation navigation);
 
         /// <summary>
         /// Returns Media debended Properties form.
