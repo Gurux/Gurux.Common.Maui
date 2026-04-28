@@ -1,7 +1,7 @@
-﻿//
+//
 // --------------------------------------------------------------------------
 //  Gurux Ltd
-// 
+//
 //
 //
 // Filename:        $HeadURL$
@@ -19,38 +19,43 @@
 // This file is a part of Gurux Device Framework.
 //
 // Gurux Device Framework is Open Source software; you can redistribute it
-// and/or modify it under the terms of the GNU General Public License 
+// and/or modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; version 2 of the License.
 // Gurux Device Framework is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of 
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // See the GNU General Public License for more details.
 //
-// This code is licensed under the GNU General Public License v2. 
+// This code is licensed under the GNU General Public License v2.
 // Full text may be retrieved at http://www.gnu.org/licenses/gpl-2.0.txt
 //---------------------------------------------------------------------------
 
-#if IOS || MACCATALYST
-
-namespace Gurux.Common.Enums
+namespace Gurux.Serial.Enums
 {
     /// <summary>
-    /// Specifies the number of stop bits used on the Serial Port.
+    /// Specifies the used parity.
     /// </summary>
-    public enum StopBits
+    public enum Parity
     {
         /// <summary>
-        /// One stop bit is used.
+        /// No parity check occurs.
         /// </summary>
-        One,
+        None,
         /// <summary>
-        /// 1.5 stop bits are used.
+        /// Sets the parity bit so that the count of bits set is an odd number.
         /// </summary>
-        OnePointFive,
+        Odd,
         /// <summary>
-        /// Two stop bits are used.
+        /// Sets the parity bit so that the count of bits set is an even number.
         /// </summary>
-        Two
-    }
+        Even,
+        /// <summary>
+        /// Leaves the parity bit set to 1.
+        /// </summary>
+        Mark,
+        /// <summary>
+        /// Leaves the parity bit set to 0.
+        /// </summary>
+        Space
+    };
 }
-#endif
