@@ -30,7 +30,6 @@
 // Full text may be retrieved at http://www.gnu.org/licenses/gpl-2.0.txt
 //---------------------------------------------------------------------------
 
-using System;
 using System.Text;
 using Gurux.Common.Enums;
 
@@ -62,7 +61,7 @@ namespace Gurux.Common
         /// <summary>
         /// Received/send data.
         /// </summary>
-        public object Data
+        public object? Data
         {
             get;
             internal set;
@@ -71,7 +70,7 @@ namespace Gurux.Common
         /// <summary>
         /// Data receiver.
         /// </summary>
-        public string Receiver
+        public string? Receiver
         {
             get;
             set;
@@ -111,7 +110,7 @@ namespace Gurux.Common
         /// <summary>
         /// Constructor
         /// </summary>
-        public TraceEventArgs(TraceTypes type, object data, string receiver)
+        public TraceEventArgs(TraceTypes type, object data, string? receiver)
         {
             Timestamp = DateTime.Now;
             Type = type;
@@ -122,7 +121,7 @@ namespace Gurux.Common
         /// <summary>
         /// Constructor
         /// </summary>
-        public TraceEventArgs(TraceTypes type, byte[] data, int index, int length, string receiver)
+        public TraceEventArgs(TraceTypes type, byte[] data, int index, int length, string? receiver)
         {
             Timestamp = DateTime.Now;
             Type = type;

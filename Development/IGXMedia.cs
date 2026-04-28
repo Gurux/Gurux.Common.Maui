@@ -92,22 +92,22 @@ namespace Gurux.Common
     public interface IGXMedia
     {
         /// <inheritdoc cref="ReceivedEventHandler"/>
-        event ReceivedEventHandler OnReceived;
+        event ReceivedEventHandler? OnReceived;
 
         /// <inheritdoc cref="ErrorEventHandler"/>
-        event ErrorEventHandler OnError;
+        event ErrorEventHandler? OnError;
 
         /// <inheritdoc cref="MediaStateChangeEventHandler"/>
-        event MediaStateChangeEventHandler OnMediaStateChange;
+        event MediaStateChangeEventHandler? OnMediaStateChange;
 
         /// <inheritdoc cref="ClientConnectedEventHandler"/>
-        event ClientConnectedEventHandler OnClientConnected;
+        event ClientConnectedEventHandler? OnClientConnected;
 
         /// <inheritdoc cref="ClientDisconnectedEventHandler"/>
-        event ClientDisconnectedEventHandler OnClientDisconnected;
+        event ClientDisconnectedEventHandler? OnClientDisconnected;
 
         /// <inheritdoc cref="TraceEventHandler"/>
-        event TraceEventHandler OnTrace;
+        event TraceEventHandler? OnTrace;
 
         /// <summary>
         /// Copies the content of the media to target media.
